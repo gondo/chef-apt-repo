@@ -38,10 +38,6 @@ define :apt_repo,
     end
   end
 
-  execute "apt-get update" do
-    action :nothing
-  end
-
   directory "/etc/apt/sources.list.d"
 
   src_entry = "#{params[:url]} #{distribution} #{components} ##{description}"
